@@ -70,7 +70,7 @@ async def on_member_join(member):
 @client.event
 async def on_ready():
     print(f'Logged in as {client.user}')
-
+    webserver.keep_alive()  # Start the Flask app
 
 webserver.keep_alive()
 client.run(os.environ["DISCORD_BOT_TOKEN"])
